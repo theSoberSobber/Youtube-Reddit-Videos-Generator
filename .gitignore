@@ -2,3 +2,4 @@ final_video_with.mp4
 models/*
 !models/downloader.sh
 output/*
+main
