@@ -52,7 +52,7 @@ jobs:
 
     # Make the generate.sh script executable
     - name: Make script executable
-      run: chmod +x generate.sh
+      run: chmod +x generate-with-extra-logging.sh
       
     # Generate the video using the provided text script
     - name: Generate Video
@@ -61,7 +61,7 @@ jobs:
         script="${{ github.event.inputs.scriptInput }}"
         
         # Run the generate.sh script with the provided text as argument
-        ./generate.sh "$script"
+        ./generate-with-extra-logging.sh "$script"
 
     # Upload the generated video as an artifact
     - name: Upload Video Artifact
