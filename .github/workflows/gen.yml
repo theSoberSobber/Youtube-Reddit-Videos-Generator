@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Install essential packages
-    - name: Install essential packages
+    # Install essential packages and imagemagick
+    - name: Install essential packages and ImageMagick
       run: |
         sudo apt-get update
         sudo apt-get install -y build-essential
@@ -22,6 +22,7 @@ jobs:
         sudo apt-get install -y g++
         sudo apt-get install -y ffmpeg
         sudo apt-get install -y libmagick++-dev
+        sudo apt-get install -y imagemagick
 
     # Checkout repository recursively
     - name: Checkout repository
@@ -45,6 +46,11 @@ jobs:
     - name: Run model downloader script
       run: |
         ./models/downloader.sh large-v1
+
+    # Replace policy.xml
+    - name: Replace policy.xml
+      run: |
+        sudo mv policy.xml /etc/ImageMagick-6/policy.xml
 
     # Set up Python and install Python dependencies
     - name: Set up Python
