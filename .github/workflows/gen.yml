@@ -20,6 +20,8 @@ jobs:
         sudo apt-get install -y cmake
         sudo apt-get install -y make
         sudo apt-get install -y g++
+        sudo apt-get install -y ffmpeg
+        sudo apt-get install -y libmagick++-dev
 
     # Checkout repository recursively
     - name: Checkout repository
@@ -39,6 +41,11 @@ jobs:
       run: |
         mv lib/whisper/build/bin/main .
 
+    # Run model downloader script
+    - name: Run model downloader script
+      run: |
+        ./models/downloader.sh large-v1
+
     # Set up Python and install Python dependencies
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -50,17 +57,17 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install moviepy pytube gtts
 
-    # Make the generate.sh script executable
+    # Make the generate-with-extra-logging.sh script executable
     - name: Make script executable
       run: chmod +x generate-with-extra-logging.sh
-      
+
     # Generate the video using the provided text script
     - name: Generate Video
       run: |
         # Accessing the input provided by the user
         script="${{ github.event.inputs.scriptInput }}"
-        
-        # Run the generate.sh script with the provided text as argument
+
+        # Run the generate-with-extra-logging.sh script with the provided text as argument
         ./generate-with-extra-logging.sh "$script"
 
     # Upload the generated video as an artifact
