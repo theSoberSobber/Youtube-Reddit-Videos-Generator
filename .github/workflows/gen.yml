@@ -1,0 +1,58 @@
+name: Generate Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      scriptInput:
+        description: 'Text script input (required)'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x' # You can specify a specific Python version here
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
+        sudo apt-get install -y libmagick++-dev
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install moviepy pytube gtts
+
+    # Make downloader.sh and generate.sh scripts executable
+    - name: Make scripts executable
+      run: |
+        chmod +x models/downloader.sh
+        chmod +x generate.sh
+
+    # Run downloader.sh script
+    - name: Run downloader.sh
+      run: ./models/downloader.sh large-v1
+      
+    # Generate the video using the provided text script
+    - name: Generate Video
+      run: |
+        # Accessing the input provided by the user
+        script="${{ github.event.inputs.scriptInput }}"
+        
+        # Run the generate.sh script with the provided text as argument
+        ./generate.sh "$script"
+
+    # Upload the generated video as an artifact
+    - name: Upload Video Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: final_video_with_audio
+        path: final_video_with_audio.mp4
