@@ -6,6 +6,7 @@ You need a UNIX Sytem for this to work, absolutely no Windows Support is Provide
 - Python deps:
 	- moviepy
 	- pytube
+- Or just use the workflow as a build/usage guide
 
 # Assets
 - The Video and the font (Courier New) all belong to their respective owners and I claim no ownership over them.
