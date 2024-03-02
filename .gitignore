@@ -3,3 +3,4 @@ models/*
 !models/downloader.sh
 output/*
 main
+generate-image.png

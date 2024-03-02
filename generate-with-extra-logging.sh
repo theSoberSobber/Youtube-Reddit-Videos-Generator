@@ -31,10 +31,10 @@ fi
 # Main script
 cecho $GREEN "Starting script..."
 
-# Run gtt-s.py with arguments
-cecho $GREEN "Running gtt-s.py..."
-python gtt-s.py $*
-cecho $GREEN "gtt-s.py completed."
+# Run gen_init.py with arguments
+cecho $GREEN "Running gen_init.py (thumbnail + tts)..."
+python gen_init.py $*
+cecho $GREEN "Thumbnail + TTS completed."
 
 ls
 

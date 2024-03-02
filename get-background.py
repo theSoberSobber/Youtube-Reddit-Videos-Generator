@@ -21,7 +21,7 @@ def download_video(url, output_path):
         return filename
     # Download the video from the given URL
     yt = YouTube(url)
-    video = yt.streams.filter(file_extension='mp4').first()
+    video = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
     video.download(output_path=output_path)
     return os.path.join(output_path, video.default_filename)  # Return the full output path
 

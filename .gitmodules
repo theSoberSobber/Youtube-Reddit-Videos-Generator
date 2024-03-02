@@ -1,3 +1,6 @@
 [submodule "lib/whisper"]
 	path = lib/whisper
 	url = https://github.com/ggerganov/whisper.cpp
+[submodule "lib/generator"]
+	path = lib/generator
+	url = https://github.com/theSoberSobber/updated-tweet-image-generator

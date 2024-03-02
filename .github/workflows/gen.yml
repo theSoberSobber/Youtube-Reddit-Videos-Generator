@@ -80,5 +80,7 @@ jobs:
     - name: Upload Video Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: final_video_with_audio
-        path: final_video_with_audio.mp4
+        name: generated_files
+          path: |
+            final_video_with_audio.mp4
+            generate-image.png
