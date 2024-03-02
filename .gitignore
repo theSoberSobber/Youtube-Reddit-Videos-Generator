@@ -4,3 +4,4 @@ models/*
 output/*
 main
 generate-image.png
+__pycache__
