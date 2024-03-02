@@ -9,5 +9,5 @@ You need a UNIX Sytem for this to work, absolutely no Windows Support is Provide
 - Or just use the workflow as a build/usage guide
 
 # Assets
-- The Video and the font (Courier New) all belong to their respective owners and I claim no ownership over them.
+- The Video and the font (Courier New or Mutant BB) all belong to their respective owners and I claim no ownership over them.
 - You can find more assets to use [here](https://github.com/elebumm/RedditVideoMakerBot/blob/master/utils/background_videos.json)
