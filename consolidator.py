@@ -2,7 +2,7 @@ import json
 import re
 from datetime import datetime, timedelta
 
-threshold = timedelta(seconds=2)
+threshold = timedelta(seconds=1.43)
 
 def subtract_timestamps(timestamp1_str, timestamp2_str):
     # Convert timestamp strings to datetime objects

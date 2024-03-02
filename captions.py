@@ -32,7 +32,7 @@ def layer_captions(background_video_path, captions_data, output_path):
         end_time = time_to_seconds(end_time_str)
         
         # Create a TextClip with the extracted text
-        text_clip = TextClip(text, fontsize=15, font='font.ttf', color='white', align='center', method='caption', size=background_clip.size) 
+        text_clip = TextClip(text, fontsize=25, font='font.ttf', color='white', align='center', method='caption', size=background_clip.size) 
         # Set the duration of the text clip
         text_clip = text_clip.set_duration(end_time - start_time)
         
