@@ -63,6 +63,10 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install moviepy pytube gtts
 
+    - name: Install Submodule Python dependencies
+      run: |
+        python -m pip install -r lib/generator/requirements.txt
+
     # Make the generate-with-extra-logging.sh script executable
     - name: Make script executable
       run: chmod +x generate-with-extra-logging.sh
