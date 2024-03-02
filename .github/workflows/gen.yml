@@ -81,6 +81,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: generated_files
-          path: |
-            final_video_with_audio.mp4
-            generate-image.png
+        path: |
+          final_video_with_audio.mp4
+          generate-image.png
