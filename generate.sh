@@ -43,7 +43,7 @@ cecho $GREEN "Conversion complete."
 
 # Run main script with model and input file
 cecho $GREEN "Running main script..."
-./main -m models/ggml-large-v1.bin rec16.wav -ojf
+./main -m models/ggml-large-v1.bin rec16.wav -ojf -sow
 cecho $GREEN "Main script completed."
 
 # Run consolidator script
