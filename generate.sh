@@ -47,8 +47,8 @@ cecho $GREEN "Running main script..."
 cecho $GREEN "Main script completed."
 
 # Run consolidator script
-cecho $GREEN "Running consolidator script..."
-python consolidator.py > /dev/null 2>&1
+cecho $GREEN "Running fake consolidator script..."
+cp rec16.wav.json consolidated.json
 cecho $GREEN "Consolidator script completed."
 
 cecho $GREEN "Fetching and Chopping BG Video..."

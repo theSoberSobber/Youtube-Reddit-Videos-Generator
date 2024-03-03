@@ -53,8 +53,8 @@ cecho $GREEN "Main script completed."
 ls
 
 # Run consolidator script
-cecho $GREEN "Running consolidator script..."
-python consolidator.py > /dev/null 2>&1
+cecho $GREEN "Running Fake Consolidator..."
+cp rec16.wav.json consolidated.json
 cecho $GREEN "Consolidator script completed."
 
 ls
