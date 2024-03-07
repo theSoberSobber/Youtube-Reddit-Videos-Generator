@@ -47,14 +47,14 @@ ls
 
 # Run main script with model and input file
 cecho $GREEN "Running main script..."
-./main -m models/ggml-large-v1.bin rec16.wav -ojf -sow
+./main -m models/ggml-large-v1.bin rec16.wav -ojf
 cecho $GREEN "Main script completed."
 
 ls
 
 # Run consolidator script
-cecho $GREEN "Running Fake Consolidator..."
-cp rec16.wav.json consolidated.json
+cecho $GREEN "Running Consolidator..."
+python consolidator.py
 cecho $GREEN "Consolidator script completed."
 
 ls
