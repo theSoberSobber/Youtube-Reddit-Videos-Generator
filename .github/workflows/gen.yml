@@ -61,7 +61,7 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install moviepy pytube gtts
+        python -m pip install moviepy yt-dlp gtts
 
     - name: Install Submodule Python dependencies
       run: |
